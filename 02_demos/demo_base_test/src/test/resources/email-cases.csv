@@ -1,0 +1,7 @@
+email,expected
+john.doe@example.com,true
+administrateur@test.fr,true
+invalid-email,false
+john.doe.example.com,false
+@example.com,false
+john.doe@,false
