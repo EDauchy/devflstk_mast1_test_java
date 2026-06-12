@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BookingService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">exercice8</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">BookingService.java</span></div><h1>BookingService.java</h1><pre class="source lang-java linenums">package com.example;
+
+import java.util.List;
+
+public class BookingService {
+    private final RoomRepository roomRepository;
+    private final ReservationRepository reservationRepository;
+    private final NotificationService notificationService;
+
+    public BookingService(RoomRepository roomRepository,
+                          ReservationRepository reservationRepository,
+<span class="fc" id="L12">                          NotificationService notificationService) {</span>
+<span class="fc" id="L13">        this.roomRepository = roomRepository;</span>
+<span class="fc" id="L14">        this.reservationRepository = reservationRepository;</span>
+<span class="fc" id="L15">        this.notificationService = notificationService;</span>
+<span class="fc" id="L16">    }</span>
+
+    public BookingResult book(Reservation reservation) {
+<span class="fc" id="L19">        var roomOptional = roomRepository.findByCode(reservation.getRoomCode());</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (roomOptional.isEmpty()) {</span>
+<span class="fc" id="L21">            return BookingResult.rejected(&quot;Room not found&quot;);</span>
+        }
+
+<span class="fc" id="L24">        Room room = roomOptional.get();</span>
+
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (reservation.getParticipants() &gt; room.getMaxCapacity()) {</span>
+<span class="fc" id="L27">            return BookingResult.rejected(&quot;Capacity exceeded&quot;);</span>
+        }
+
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (!reservation.getEndDate().isAfter(reservation.getStartDate())) {</span>
+<span class="fc" id="L31">            return BookingResult.rejected(&quot;Invalid period&quot;);</span>
+        }
+
+<span class="fc" id="L34">        List&lt;Reservation&gt; existingReservations = reservationRepository.findByRoomCode(reservation.getRoomCode());</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        for (Reservation existing : existingReservations) {</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">            if (overlaps(reservation, existing)) {</span>
+<span class="fc" id="L37">                return BookingResult.rejected(&quot;Room already booked&quot;);</span>
+            }
+<span class="fc" id="L39">        }</span>
+
+<span class="fc" id="L41">        reservationRepository.save(reservation);</span>
+<span class="fc" id="L42">        notificationService.sendConfirmation(</span>
+<span class="fc" id="L43">                reservation.getUserEmail(),</span>
+<span class="fc" id="L44">                &quot;Reservation confirmed for room &quot; + reservation.getRoomCode()</span>
+        );
+
+<span class="fc" id="L47">        return BookingResult.accepted();</span>
+    }
+
+    private boolean overlaps(Reservation requested, Reservation existing) {
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        return requested.getStartDate().isBefore(existing.getEndDate())</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">                &amp;&amp; existing.getStartDate().isBefore(requested.getEndDate());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.15.202606040825</span></div></body></html>

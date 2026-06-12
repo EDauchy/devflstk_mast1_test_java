@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.RunCucumberTest" time="2.521" tests="16" errors="0" skipped="0" failures="0" flakes="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.RunCucumberTest" time="2.293" tests="16" errors="0" skipped="0" failures="0" flakes="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="FR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\Esteban Dauchy\AppData\Local\Temp\surefire13724576956012954798\surefirebooter-20260612115025509_3.jar C:\Users\Esteban Dauchy\AppData\Local\Temp\surefire13724576956012954798 2026-06-12T11-50-25_302-jvmRun1 surefire-20260612115025509_1tmp surefire_0-20260612115025509_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Esteban Dauchy\AppData\Local\Temp\surefire3142715511355954589\surefirebooter-20260612120414083_3.jar C:\Users\Esteban Dauchy\AppData\Local\Temp\surefire3142715511355954589 2026-06-12T12-04-13_918-jvmRun1 surefire-20260612120414083_1tmp surefire_0-20260612120414083_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Esteban Dauchy\Desktop\Tests &amp; tests unitaires\GOOD\devflstk_mast1_test_java\03_exercices\exercice10\target\test-classes;C:\Users\Esteban Dauchy\Desktop\Tests &amp; tests unitaires\GOOD\devflstk_mast1_test_java\03_exercices\exercice10\target\classes;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\cucumber-java\7.34.3\cucumber-java-7.34.3.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\cucumber-core\7.34.3\cucumber-core-7.34.3.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\cucumber-gherkin\7.34.3\cucumber-gherkin-7.34.3.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.34.3\cucumber-gherkin-messages-7.34.3.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\gherkin\36.1.0\gherkin-36.1.0.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\messages\30.1.0\messages-30.1.0.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\messages-ndjson\0.3.2\messages-ndjson-0.3.2.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\pretty-formatter\2.4.1\pretty-formatter-2.4.1.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\query\14.7.0\query-14.7.0.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\teamcity-formatter\0.2.0\teamcity-formatter-0.2.0.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\testng-xml-formatter\0.7.0\testng-xml-formatter-0.7.0.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\usage-formatter\0.1.0\usage-formatter-0.1.0.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\tag-expressions\8.1.0\tag-expressions-8.1.0.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\cucumber-expressions\18.1.0\cucumber-expressions-18.1.0.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\cucumber-json-formatter\0.3.2\cucumber-json-formatter-0.3.2.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\datatable\7.34.3\datatable-7.34.3.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\cucumber-plugin\7.34.3\cucumber-plugin-7.34.3.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\docstring\7.34.3\docstring-7.34.3.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\html-formatter\22.3.0\html-formatter-22.3.0.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\junit-xml-formatter\0.11.0\junit-xml-formatter-0.11.0.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\ci-environment\12.0.0\ci-environment-12.0.0.jar;C:\Users\Esteban Dauchy\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Esteban Dauchy\.m2\repository\io\cucumber\cucumber-junit-platform-engine\7.34.3\cucumber-junit-platform-engine-7.34.3.jar;C:\Users\Esteban Dauchy\.m2\repository\org\junit\platform\junit-platform-engine\1.14.2\junit-platform-engine-1.14.2.jar;C:\Users\Esteban Dauchy\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Esteban Dauchy\.m2\repository\org\junit\platform\junit-platform-commons\1.14.2\junit-platform-commons-1.14.2.jar;C:\Users\Esteban Dauchy\.m2\repository\org\junit\platform\junit-platform-suite\1.10.2\junit-platform-suite-1.10.2.jar;C:\Users\Esteban Dauchy\.m2\repository\org\junit\platform\junit-platform-suite-api\1.10.2\junit-platform-suite-api-1.10.2.jar;C:\Users\Esteban Dauchy\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.10.2\junit-platform-suite-engine-1.10.2.jar;C:\Users\Esteban Dauchy\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.10.2\junit-platform-suite-commons-1.10.2.jar;C:\Users\Esteban Dauchy\.m2\repository\org\junit\platform\junit-platform-launcher\1.10.2\junit-platform-launcher-1.10.2.jar;C:\Users\Esteban Dauchy\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\Esteban Dauchy\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\Esteban Dauchy\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\Esteban Dauchy\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\Esteban Dauchy\.m2\repository\org\mockito\mockito-junit-jupiter\5.23.0\mockito-junit-jupiter-5.23.0.jar;C:\Users\Esteban Dauchy\.m2\repository\org\mockito\mockito-core\5.23.0\mockito-core-5.23.0.jar;C:\Users\Esteban Dauchy\.m2\repository\net\bytebuddy\byte-buddy\1.17.7\byte-buddy-1.17.7.jar;C:\Users\Esteban Dauchy\.m2\repository\net\bytebuddy\byte-buddy-agent\1.17.7\byte-buddy-agent-1.17.7.jar;C:\Users\Esteban Dauchy\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Esteban Dauchy\AppData\Local\Temp\surefire13724576956012954798\surefirebooter-20260612115025509_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Esteban Dauchy\AppData\Local\Temp\surefire3142715511355954589\surefirebooter-20260612120414083_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.4+8-LTS-274"/>
@@ -63,7 +63,7 @@
     <property name="maven.repo.local" value="C:\Users\Esteban Dauchy\.m2\repository"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="Successful account registration" classname="RunCucumberTest" time="1.518">
+  <testcase name="Successful account registration" classname="RunCucumberTest" time="1.323">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Successful account registration                                                            &amp#27;[90m# classpath:features/account-creation.feature:3&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mthe registration form is available&amp#27;[39m                                                         &amp#27;[90m# com.example.steps.AccountSteps.theRegistrationFormIsAvailable()&amp#27;[39m
@@ -79,7 +79,7 @@ WARNING: If a serviceability tool is not in use, please run with -Djdk.instrumen
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
 ]]></system-err>
   </testcase>
-  <testcase name="Registration fails when username already exists" classname="RunCucumberTest" time="0.02">
+  <testcase name="Registration fails when username already exists" classname="RunCucumberTest" time="0.017">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Registration fails when username already exists                                                 &amp#27;[90m# classpath:features/account-creation.feature:10&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mthe registration form is available&amp#27;[39m                                                              &amp#27;[90m# com.example.steps.AccountSteps.theRegistrationFormIsAvailable()&amp#27;[39m
@@ -88,7 +88,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mThen &amp#27;[22ma registration error should be returned with message &amp#27;[1m"Username already exists"&amp#27;[22m&amp#27;[39m                   &amp#27;[90m# com.example.steps.AccountSteps.aRegistrationErrorShouldBeReturnedWithMessage(java.lang.String)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Add a new product to cart" classname="RunCucumberTest" time="0.119">
+  <testcase name="Add a new product to cart" classname="RunCucumberTest" time="0.121">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Add a new product to cart                                          &amp#27;[90m# classpath:features/add-to-cart.feature:3&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mcart &amp#27;[1m"cart-1"&amp#27;[22m exists&amp#27;[39m                                               &amp#27;[90m# com.example.steps.CartSteps.cartExists(java.lang.String)&amp#27;[39m
@@ -99,7 +99,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mcart &amp#27;[1m"cart-1"&amp#27;[22m should contain product &amp#27;[1m"P001"&amp#27;[22m with quantity &amp#27;[1m1&amp#27;[22m&amp#27;[39m          &amp#27;[90m# com.example.steps.CartSteps.cartShouldContainProductWithQuantity(java.lang.String,java.lang.String,int)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Increase quantity when product already in cart" classname="RunCucumberTest" time="0.019">
+  <testcase name="Increase quantity when product already in cart" classname="RunCucumberTest" time="0.028">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Increase quantity when product already in cart                     &amp#27;[90m# classpath:features/add-to-cart.feature:11&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mcart &amp#27;[1m"cart-2"&amp#27;[22m exists&amp#27;[39m                                               &amp#27;[90m# com.example.steps.CartSteps.cartExists(java.lang.String)&amp#27;[39m
@@ -110,7 +110,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mcart &amp#27;[1m"cart-2"&amp#27;[22m should contain product &amp#27;[1m"P002"&amp#27;[22m with quantity &amp#27;[1m3&amp#27;[22m&amp#27;[39m          &amp#27;[90m# com.example.steps.CartSteps.cartShouldContainProductWithQuantity(java.lang.String,java.lang.String,int)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Add to cart fails when cart does not exist" classname="RunCucumberTest" time="0.01">
+  <testcase name="Add to cart fails when cart does not exist" classname="RunCucumberTest" time="0.015">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Add to cart fails when cart does not exist                        &amp#27;[90m# classpath:features/add-to-cart.feature:19&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mcart &amp#27;[1m"cart-missing"&amp#27;[22m does not exist&amp#27;[39m                                &amp#27;[90m# com.example.steps.CartSteps.cartDoesNotExist(java.lang.String)&amp#27;[39m
@@ -119,7 +119,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mThen &amp#27;[22ma cart error should be returned with message &amp#27;[1m"Cart does not exist"&amp#27;[22m&amp#27;[39m &amp#27;[90m# com.example.steps.CartSteps.aCartErrorShouldBeReturnedWithMessage(java.lang.String)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Browse products by category" classname="RunCucumberTest" time="0.032">
+  <testcase name="Browse products by category" classname="RunCucumberTest" time="0.04">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Browse products by category                                               &amp#27;[90m# classpath:features/category-navigation.feature:3&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mthe categories page is available&amp#27;[39m                                          &amp#27;[90m# com.example.steps.ProductSteps.theCategoriesPageIsAvailable()&amp#27;[39m
@@ -129,7 +129,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mthe product repository should have been queried with category &amp#27;[1m"Electronics"&amp#27;[22m&amp#27;[39m &amp#27;[90m# com.example.steps.ProductSteps.theProductRepositoryShouldHaveBeenQueriedWithCategory(java.lang.String)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Successful login redirects to home page" classname="RunCucumberTest" time="0.021">
+  <testcase name="Successful login redirects to home page" classname="RunCucumberTest" time="0.024">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Successful login redirects to home page                       &amp#27;[90m# classpath:features/login.feature:3&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mthe login form is available&amp#27;[39m                                   &amp#27;[90m# com.example.steps.LoginSteps.theLoginFormIsAvailable()&amp#27;[39m
@@ -140,7 +140,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mthe login message should be &amp#27;[1m"Welcome carol"&amp#27;[22m&amp#27;[39m                     &amp#27;[90m# com.example.steps.LoginSteps.theLoginMessageShouldBe(java.lang.String)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Failed login shows error message" classname="RunCucumberTest" time="0.012">
+  <testcase name="Failed login shows error message" classname="RunCucumberTest" time="0.013">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Failed login shows error message                               &amp#27;[90m# classpath:features/login.feature:11&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mthe login form is available&amp#27;[39m                                    &amp#27;[90m# com.example.steps.LoginSteps.theLoginFormIsAvailable()&amp#27;[39m
@@ -151,7 +151,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mthe user should not be redirected to the home page&amp#27;[39m               &amp#27;[90m# com.example.steps.LoginSteps.theUserShouldNotBeRedirectedToHomePage()&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Validate an existing order" classname="RunCucumberTest" time="0.009">
+  <testcase name="Validate an existing order" classname="RunCucumberTest" time="0.008">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Validate an existing order                                                     &amp#27;[90m# classpath:features/order-validation.feature:3&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mcart &amp#27;[1m"cart-6"&amp#27;[22m exists&amp#27;[39m                                                           &amp#27;[90m# com.example.steps.CartSteps.cartExists(java.lang.String)&amp#27;[39m
@@ -160,7 +160,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mcart &amp#27;[1m"cart-6"&amp#27;[22m should be validated&amp#27;[39m                                                &amp#27;[90m# com.example.steps.CartSteps.cartShouldBeValidated(java.lang.String)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Validation fails when cart does not exist" classname="RunCucumberTest" time="0.008">
+  <testcase name="Validation fails when cart does not exist" classname="RunCucumberTest" time="0.009">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Validation fails when cart does not exist                         &amp#27;[90m# classpath:features/order-validation.feature:9&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mcart &amp#27;[1m"cart-missing-3"&amp#27;[22m does not exist&amp#27;[39m                              &amp#27;[90m# com.example.steps.CartSteps.cartDoesNotExist(java.lang.String)&amp#27;[39m
@@ -168,7 +168,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mThen &amp#27;[22ma cart error should be returned with message &amp#27;[1m"Cart does not exist"&amp#27;[22m&amp#27;[39m &amp#27;[90m# com.example.steps.CartSteps.aCartErrorShouldBeReturnedWithMessage(java.lang.String)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Search products by keyword" classname="RunCucumberTest" time="0.011">
+  <testcase name="Search products by keyword" classname="RunCucumberTest" time="0.012">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Search products by keyword                                         &amp#27;[90m# classpath:features/product-search.feature:3&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mthe search bar is available&amp#27;[39m                                        &amp#27;[90m# com.example.steps.ProductSteps.theSearchBarIsAvailable()&amp#27;[39m
@@ -178,7 +178,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mthe product repository should have been queried with keyword &amp#27;[1m"phone"&amp#27;[22m&amp#27;[39m &amp#27;[90m# com.example.steps.ProductSteps.theProductRepositoryShouldHaveBeenQueriedWithKeyword(java.lang.String)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Search products by maximum price" classname="RunCucumberTest" time="0.012">
+  <testcase name="Search products by maximum price" classname="RunCucumberTest" time="0.014">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Search products by maximum price                                  &amp#27;[90m# classpath:features/product-search.feature:10&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mthe search bar is available&amp#27;[39m                                       &amp#27;[90m# com.example.steps.ProductSteps.theSearchBarIsAvailable()&amp#27;[39m
@@ -188,7 +188,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mAnd &amp#27;[22mthe product repository should have been queried with max price &amp#27;[1m50.0&amp#27;[22m&amp#27;[39m &amp#27;[90m# com.example.steps.ProductSteps.theProductRepositoryShouldHaveBeenQueriedWithMaxPrice(double)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Decrease quantity when product quantity is greater than one" classname="RunCucumberTest" time="0.009">
+  <testcase name="Decrease quantity when product quantity is greater than one" classname="RunCucumberTest" time="0.008">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Decrease quantity when product quantity is greater than one &amp#27;[90m# classpath:features/remove-from-cart.feature:3&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mcart &amp#27;[1m"cart-3"&amp#27;[22m exists&amp#27;[39m                                        &amp#27;[90m# com.example.steps.CartSteps.cartExists(java.lang.String)&amp#27;[39m
@@ -197,7 +197,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mThen &amp#27;[22mcart &amp#27;[1m"cart-3"&amp#27;[22m should have product &amp#27;[1m"P004"&amp#27;[22m quantity decreased&amp#27;[39m  &amp#27;[90m# com.example.steps.CartSteps.cartShouldHaveProductQuantityDecreased(java.lang.String,java.lang.String)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Remove product when quantity equals one" classname="RunCucumberTest" time="0.009">
+  <testcase name="Remove product when quantity equals one" classname="RunCucumberTest" time="0.01">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Remove product when quantity equals one                  &amp#27;[90m# classpath:features/remove-from-cart.feature:9&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mcart &amp#27;[1m"cart-4"&amp#27;[22m exists&amp#27;[39m                                     &amp#27;[90m# com.example.steps.CartSteps.cartExists(java.lang.String)&amp#27;[39m
@@ -206,7 +206,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mThen &amp#27;[22mproduct &amp#27;[1m"P005"&amp#27;[22m should be removed from cart &amp#27;[1m"cart-4"&amp#27;[22m&amp#27;[39m       &amp#27;[90m# com.example.steps.CartSteps.productShouldBeRemovedFromCart(java.lang.String,java.lang.String)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Remove fails when product is not in cart" classname="RunCucumberTest" time="0.008">
+  <testcase name="Remove fails when product is not in cart" classname="RunCucumberTest" time="0.01">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Remove fails when product is not in cart                          &amp#27;[90m# classpath:features/remove-from-cart.feature:15&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mcart &amp#27;[1m"cart-5"&amp#27;[22m exists&amp#27;[39m                                              &amp#27;[90m# com.example.steps.CartSteps.cartExists(java.lang.String)&amp#27;[39m
@@ -215,7 +215,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mThen &amp#27;[22ma cart error should be returned with message &amp#27;[1m"Product not in cart"&amp#27;[22m&amp#27;[39m &amp#27;[90m# com.example.steps.CartSteps.aCartErrorShouldBeReturnedWithMessage(java.lang.String)&amp#27;[39m
 ]]></system-out>
   </testcase>
-  <testcase name="Remove fails when cart does not exist" classname="RunCucumberTest" time="0.006">
+  <testcase name="Remove fails when cart does not exist" classname="RunCucumberTest" time="0.008">
     <system-out><![CDATA[
 &amp#27;[1mScenario:&amp#27;[22m Remove fails when cart does not exist                             &amp#27;[90m# classpath:features/remove-from-cart.feature:21&amp#27;[39m
   &amp#27;[32m✔&amp#27;[39m &amp#27;[32m&amp#27;[1mGiven &amp#27;[22mcart &amp#27;[1m"cart-missing-2"&amp#27;[22m does not exist&amp#27;[39m                              &amp#27;[90m# com.example.steps.CartSteps.cartDoesNotExist(java.lang.String)&amp#27;[39m
