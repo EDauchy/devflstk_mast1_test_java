@@ -1,0 +1,9 @@
+com\example\CartService.class
+com\example\ProductService.class
+com\example\UserRepository.class
+com\example\AccountService.class
+com\example\LoginResult.class
+com\example\ProductRepository.class
+com\example\AuthService.class
+com\example\CartRepository.class
+com\example\Product.class
