@@ -10,11 +10,11 @@ public class RechercheVilleTest {
 
     @Test
     public void givenSearchTextWithLessThanTwoCharacters_whenSearching_thenThrowNotFoundException(){
-        //Arrange
+        // Arrange
         rechercheVille = new RechercheVille();
         String searchString = "a";
 
-        //Act / Assert
+        // Act & Assert
         Assertions.assertThrows(NotFoundException.class,()->{
             rechercheVille.rechercher(searchString);
         });
@@ -22,57 +22,57 @@ public class RechercheVilleTest {
 
     @Test
     public void givenSearchTextWithAtLeastTwoCharacters_whenSearching_thenReturnMatchingCities(){
-        //Arrange
+        // Arrange
         rechercheVille = new RechercheVille();
         String searchString = "Va";
         List<String> expected = List.of("Valence","Vancouver");
 
-        //Act
+        // Act
         List<String> result = rechercheVille.rechercher(searchString);
 
-        //Assert
+        // Assert
         Assertions.assertEquals(expected,result);
     }
 
     @Test
     public void givenMixedCaseSearchText_whenSearching_thenIgnoreCase(){
-        //Arrange
+        // Arrange
         rechercheVille = new RechercheVille();
         String searchString = "vA";
         List<String> expected = List.of("Valence","Vancouver");
 
-        //Act
+        // Act
         List<String> result = rechercheVille.rechercher(searchString);
 
-        //Assert
+        // Assert
         Assertions.assertEquals(expected,result);
     }
 
     @Test
     public void givenSearchTextContainedInCityName_whenSearching_thenReturnMatchingCities(){
-        //Arrange
+        // Arrange
         rechercheVille = new RechercheVille();
         String searchString = "ape";
         List<String> expected = List.of("Budapest");
 
-        //Act
+        // Act
         List<String> result = rechercheVille.rechercher(searchString);
 
-        //Assert
+        // Assert
         Assertions.assertEquals(expected,result);
     }
 
     @Test
     public void givenAsteriskSearchText_whenSearching_thenReturnAllCities(){
-        //Arrange
+        // Arrange
         rechercheVille = new RechercheVille();
         String searchString = "*";
         List<String> expected = List.of("Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul");
 
-        //Act
+        // Act
         List<String> result = rechercheVille.rechercher(searchString);
 
-        //Assert
+        // Assert
         Assertions.assertEquals(expected,result);
     }
 }
