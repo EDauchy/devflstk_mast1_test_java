@@ -1,5 +1,5 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-exercice8,com.example,BookingService,0,100,1,13,0,25,1,9,0,3
-exercice8,com.example,Reservation,0,33,0,0,0,12,0,6,0,6
-exercice8,com.example,Room,6,15,0,0,2,6,2,2,2,2
-exercice8,com.example,BookingResult,0,27,0,0,0,8,0,5,0,5
+exercice8,com.example,BookingService,0,106,1,9,0,22,1,9,0,5
+exercice8,com.example,Booking,0,18,0,0,0,1,0,1,0,1
+exercice8,com.example,Room,0,12,0,0,0,1,0,1,0,1
+exercice8,com.example,BookingReceipt,0,12,0,0,0,1,0,1,0,1

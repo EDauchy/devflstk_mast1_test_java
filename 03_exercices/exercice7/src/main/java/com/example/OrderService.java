@@ -1,36 +1,41 @@
 package com.example;
 
-public class OrderService {
-    private final ProductRepository productRepository;
-    private final CustomerRepository customerRepository;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
-    public OrderService(ProductRepository productRepository, CustomerRepository customerRepository) {
-        this.productRepository = productRepository;
-        this.customerRepository = customerRepository;
+public class OrderService {
+    private final ProductCatalog productCatalog;
+
+    public OrderService(ProductCatalog productCatalog) {
+        this.productCatalog = productCatalog;
     }
 
-    public OrderResult placeOrder(String customerEmail, String productReference, int quantity) {
-        var productOptional = productRepository.findByReference(productReference);
-        if (productOptional.isEmpty()) {
-            return OrderResult.rejected("Product not found");
+    public OrderReceipt placeOrder(String customerEmail, CustomerStatus status, String productReference, int quantity) {
+        Product product = productCatalog.findByReference(productReference)
+                .orElseThrow(() -> new IllegalArgumentException("Product not found"));
+
+        if (quantity > product.stock()) {
+            throw new IllegalArgumentException("Insufficient stock");
         }
 
-        Product product = productOptional.get();
-        if (quantity > product.getStock()) {
-            return OrderResult.rejected("Insufficient stock");
-        }
+        BigDecimal total = product.unitPrice()
+                .multiply(BigDecimal.valueOf(quantity))
+                .multiply(BigDecimal.ONE.subtract(discountRate(status)))
+                .setScale(2, RoundingMode.HALF_UP);
 
-        CustomerProfile profile = customerRepository.getProfileByEmail(customerEmail);
-        double baseAmount = product.getUnitPrice() * quantity;
-        double totalAmount = baseAmount * (1 - profile.getDiscountRate());
-
-        OrderReceipt receipt = new OrderReceipt(
-                productReference,
+        return new OrderReceipt(
+                product.reference(),
                 quantity,
-                totalAmount,
-                "Order confirmed for " + customerEmail
+                total,
+                "Order accepted for " + customerEmail
         );
+    }
 
-        return OrderResult.accepted(receipt);
+    private BigDecimal discountRate(CustomerStatus status) {
+        return switch (status) {
+            case STANDARD -> BigDecimal.ZERO;
+            case PREMIUM -> new BigDecimal("0.10");
+            case VIP -> new BigDecimal("0.20");
+        };
     }
 }

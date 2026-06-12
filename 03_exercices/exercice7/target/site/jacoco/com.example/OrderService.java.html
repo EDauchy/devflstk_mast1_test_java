@@ -1,37 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OrderService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">exercice7</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">OrderService.java</span></div><h1>OrderService.java</h1><pre class="source lang-java linenums">package com.example;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class OrderService {
-    private final ProductRepository productRepository;
-    private final CustomerRepository customerRepository;
+    private final ProductCatalog productCatalog;
 
-<span class="fc" id="L7">    public OrderService(ProductRepository productRepository, CustomerRepository customerRepository) {</span>
-<span class="fc" id="L8">        this.productRepository = productRepository;</span>
-<span class="fc" id="L9">        this.customerRepository = customerRepository;</span>
-<span class="fc" id="L10">    }</span>
+<span class="fc" id="L9">    public OrderService(ProductCatalog productCatalog) {</span>
+<span class="fc" id="L10">        this.productCatalog = productCatalog;</span>
+<span class="fc" id="L11">    }</span>
 
-    public OrderResult placeOrder(String customerEmail, String productReference, int quantity) {
-<span class="fc" id="L13">        var productOptional = productRepository.findByReference(productReference);</span>
-<span class="fc bfc" id="L14" title="All 2 branches covered.">        if (productOptional.isEmpty()) {</span>
-<span class="fc" id="L15">            return OrderResult.rejected(&quot;Product not found&quot;);</span>
+    public OrderReceipt placeOrder(String customerEmail, CustomerStatus status, String productReference, int quantity) {
+<span class="fc" id="L14">        Product product = productCatalog.findByReference(productReference)</span>
+<span class="fc" id="L15">                .orElseThrow(() -&gt; new IllegalArgumentException(&quot;Product not found&quot;));</span>
+
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (quantity &gt; product.stock()) {</span>
+<span class="fc" id="L18">            throw new IllegalArgumentException(&quot;Insufficient stock&quot;);</span>
         }
 
-<span class="fc" id="L18">        Product product = productOptional.get();</span>
-<span class="fc bfc" id="L19" title="All 2 branches covered.">        if (quantity &gt; product.getStock()) {</span>
-<span class="fc" id="L20">            return OrderResult.rejected(&quot;Insufficient stock&quot;);</span>
-        }
+<span class="fc" id="L21">        BigDecimal total = product.unitPrice()</span>
+<span class="fc" id="L22">                .multiply(BigDecimal.valueOf(quantity))</span>
+<span class="fc" id="L23">                .multiply(BigDecimal.ONE.subtract(discountRate(status)))</span>
+<span class="fc" id="L24">                .setScale(2, RoundingMode.HALF_UP);</span>
 
-<span class="fc" id="L23">        CustomerProfile profile = customerRepository.getProfileByEmail(customerEmail);</span>
-<span class="fc" id="L24">        double baseAmount = product.getUnitPrice() * quantity;</span>
-<span class="fc" id="L25">        double totalAmount = baseAmount * (1 - profile.getDiscountRate());</span>
-
-<span class="fc" id="L27">        OrderReceipt receipt = new OrderReceipt(</span>
-                productReference,
+<span class="fc" id="L26">        return new OrderReceipt(</span>
+<span class="fc" id="L27">                product.reference(),</span>
                 quantity,
-                totalAmount,
-                &quot;Order confirmed for &quot; + customerEmail
+                total,
+                &quot;Order accepted for &quot; + customerEmail
         );
+    }
 
-<span class="fc" id="L34">        return OrderResult.accepted(receipt);</span>
+    private BigDecimal discountRate(CustomerStatus status) {
+<span class="fc bfc" id="L35" title="All 3 branches covered.">        return switch (status) {</span>
+<span class="fc" id="L36">            case STANDARD -&gt; BigDecimal.ZERO;</span>
+<span class="fc" id="L37">            case PREMIUM -&gt; new BigDecimal(&quot;0.10&quot;);</span>
+<span class="fc" id="L38">            case VIP -&gt; new BigDecimal(&quot;0.20&quot;);</span>
+        };
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.15.202606040825</span></div></body></html>

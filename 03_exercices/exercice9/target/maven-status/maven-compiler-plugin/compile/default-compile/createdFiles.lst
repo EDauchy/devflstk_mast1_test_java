@@ -1,3 +1,3 @@
-com\example\IGenerateur.class
-com\example\Roll.class
-com\example\Frame.class
+org\example\Roll.class
+org\example\Frame.class
+org\example\IGenerateur.class

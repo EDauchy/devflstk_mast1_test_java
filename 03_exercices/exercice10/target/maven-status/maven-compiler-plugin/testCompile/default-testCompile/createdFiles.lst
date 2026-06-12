@@ -1,5 +1,7 @@
-com\example\steps\ProductSteps.class
-com\example\RunCucumberTest.class
-com\example\steps\LoginSteps.class
-com\example\steps\AccountSteps.class
-com\example\steps\CartSteps.class
+org\example\steps\RemoveProductFromCommandSteps.class
+org\example\steps\UserRegisterSteps.class
+org\example\steps\AddProductToCommandSteps.class
+org\example\steps\ProductSearchSteps.class
+org\example\steps\UserLoginSteps.class
+org\example\RunCucumberTest.class
+org\example\steps\ProductSearchByCategorieSteps.class

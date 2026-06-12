@@ -1,54 +1,64 @@
 package com.example;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class BookingService {
+
     private final RoomRepository roomRepository;
-    private final ReservationRepository reservationRepository;
-    private final NotificationService notificationService;
+    private final NotificationGateway notificationGateway;
 
-    public BookingService(RoomRepository roomRepository,
-                          ReservationRepository reservationRepository,
-                          NotificationService notificationService) {
+    public BookingService(RoomRepository roomRepository, NotificationGateway notificationGateway) {
         this.roomRepository = roomRepository;
-        this.reservationRepository = reservationRepository;
-        this.notificationService = notificationService;
+        this.notificationGateway = notificationGateway;
     }
 
-    public BookingResult book(Reservation reservation) {
-        var roomOptional = roomRepository.findByCode(reservation.getRoomCode());
-        if (roomOptional.isEmpty()) {
-            return BookingResult.rejected("Room not found");
+    public BookingReceipt bookRoom(
+            String userEmail,
+            String roomCode,
+            int attendees,
+            LocalDateTime startDateTime,
+            LocalDateTime endDateTime
+    ) {
+        if (!endDateTime.isAfter(startDateTime)) {
+            throw new IllegalArgumentException("End date must be after start date");
         }
 
-        Room room = roomOptional.get();
+        Room room = roomRepository.findByCode(roomCode)
+                .orElseThrow(() -> new IllegalArgumentException("Room not found"));
 
-        if (reservation.getParticipants() > room.getMaxCapacity()) {
-            return BookingResult.rejected("Capacity exceeded");
+        if (attendees > room.capacity()) {
+            throw new IllegalArgumentException("Room capacity exceeded");
         }
 
-        if (!reservation.getEndDate().isAfter(reservation.getStartDate())) {
-            return BookingResult.rejected("Invalid period");
+        List<Booking> existingBookings = roomRepository.findBookingsByRoomCode(roomCode);
+
+        boolean hasConflict = existingBookings.stream()
+                .anyMatch(existingBooking -> overlaps(
+                        startDateTime,
+                        endDateTime,
+                        existingBooking.startDateTime(),
+                        existingBooking.endDateTime()
+                ));
+
+        if (hasConflict) {
+            throw new IllegalArgumentException("Room already booked");
         }
 
-        List<Reservation> existingReservations = reservationRepository.findByRoomCode(reservation.getRoomCode());
-        for (Reservation existing : existingReservations) {
-            if (overlaps(reservation, existing)) {
-                return BookingResult.rejected("Room already booked");
-            }
-        }
+        Booking booking = new Booking(userEmail, roomCode, attendees, startDateTime, endDateTime);
 
-        reservationRepository.save(reservation);
-        notificationService.sendConfirmation(
-                reservation.getUserEmail(),
-                "Reservation confirmed for room " + reservation.getRoomCode()
-        );
+        roomRepository.save(booking);
+        notificationGateway.sendConfirmation(userEmail, booking);
 
-        return BookingResult.accepted();
+        return new BookingReceipt(roomCode, userEmail, "Booking confirmed");
     }
 
-    private boolean overlaps(Reservation requested, Reservation existing) {
-        return requested.getStartDate().isBefore(existing.getEndDate())
-                && existing.getStartDate().isBefore(requested.getEndDate());
+    private boolean overlaps(
+            LocalDateTime startA,
+            LocalDateTime endA,
+            LocalDateTime startB,
+            LocalDateTime endB
+    ) {
+        return startA.isBefore(endB) && endA.isAfter(startB);
     }
 }

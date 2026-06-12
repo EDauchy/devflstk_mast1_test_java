@@ -1,6 +1,5 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-exercice7,com.example,OrderReceipt,6,21,0,0,2,8,2,3,2,3
-exercice7,com.example,OrderService,0,61,0,4,0,15,0,4,0,2
-exercice7,com.example,CustomerProfile,0,35,0,0,0,8,0,3,0,3
-exercice7,com.example,Product,6,21,0,0,2,8,2,3,2,3
-exercice7,com.example,OrderResult,0,35,0,0,0,10,0,6,0,6
+exercice7,com.example,OrderReceipt,0,15,0,0,0,1,0,1,0,1
+exercice7,com.example,OrderService,0,71,0,5,0,17,0,7,0,4
+exercice7,com.example,Product,0,15,0,0,0,1,0,1,0,1
+exercice7,com.example,CustomerStatus,0,21,0,0,0,4,0,1,0,1

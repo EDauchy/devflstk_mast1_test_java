@@ -1,7 +1,6 @@
+com\example\OrderService$1.class
 com\example\OrderReceipt.class
+com\example\CustomerStatus.class
 com\example\OrderService.class
-com\example\OrderResult.class
-com\example\CustomerProfile.class
-com\example\ProductRepository.class
-com\example\CustomerRepository.class
+com\example\ProductCatalog.class
 com\example\Product.class
