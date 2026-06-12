@@ -20,6 +20,7 @@ public class PasswordValidatorTest {
 
     @BeforeEach
     void setUp() {
+        // Arrange
         passwordValidator = new PasswordValidator();
     }
 
@@ -30,8 +31,10 @@ public class PasswordValidatorTest {
         @Test
         @DisplayName("Doit retourner true lorsqu'un mot de passe est valide")
         void shouldReturnTrueWhenPasswordIsValid() {
+            // Act
             boolean result = passwordValidator.isValid("Password1!");
 
+            // Assert
             assertTrue(result);
         }
 
@@ -45,8 +48,10 @@ public class PasswordValidatorTest {
         })
         @DisplayName("Doit retourner false lorsqu'un mot de passe est invalide")
         void shouldReturnFalseWhenPasswordIsInvalid(String password) {
+            // Act
             boolean result = passwordValidator.isValid(password);
 
+            // Assert
             assertFalse(result);
         }
 
@@ -54,8 +59,10 @@ public class PasswordValidatorTest {
         @NullAndEmptySource
         @DisplayName("Doit retourner false lorsqu'un mot de passe est null ou vide")
         void shouldReturnFalseWhenPasswordIsNullOrEmpty(String password) {
+            // Act
             boolean result = passwordValidator.isValid(password);
 
+            // Assert
             assertFalse(result);
         }
     }
@@ -75,16 +82,20 @@ public class PasswordValidatorTest {
         })
         @DisplayName("Doit retourner le bon message selon le mot de passe")
         void shouldReturnExpectedMessageForPassword(String password, String expectedMessage) {
+            // Act
             String result = passwordValidator.getErrorMessage(password);
 
+            // Assert
             assertEquals(expectedMessage, result);
         }
 
         @Test
         @DisplayName("Doit retourner un message spécifique lorsqu'un mot de passe est null")
         void shouldReturnExpectedMessageWhenPasswordIsNull() {
+            // Act
             String result = passwordValidator.getErrorMessage(null);
 
+            // Assert
             assertEquals("Password must not be null", result);
         }
     }
@@ -109,8 +120,10 @@ public class PasswordValidatorTest {
         @MethodSource("passwordCases")
         @DisplayName("Doit valider plusieurs mots de passe depuis une méthode source")
         void shouldValidatePasswordsUsingMethodSource(String password, boolean expectedResult) {
+            // Act
             boolean result = passwordValidator.isValid(password);
 
+            // Assert
             assertEquals(expectedResult, result);
         }
     }
