@@ -20,6 +20,7 @@ public class DiceScoreTest {
 
     @BeforeEach
     void setUp() {
+        // Arrange
         diceScore = new DiceScore(de);
     }
 
