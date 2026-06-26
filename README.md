@@ -8,3 +8,5 @@
 * Exercice 14
 
 Je rappelle que je préfère recevoir **un projet réalisé correctement et avec sérieux** plutôt que **quatre projets terminés rapidement mais bâclés**. La qualité du travail est plus importante que la quantité.
+
+Si possible, laissez votre dépôt GitHub accessible au moins jusqu'à la fin de la semaine prochaine, afin que je puisse le consulter si nécessaire. Si ce n'est pas possible, merci de me le signaler dans votre message Teams.
